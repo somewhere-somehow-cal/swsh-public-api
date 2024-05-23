@@ -1,0 +1,2 @@
+# swsh Node.js SDK
+This is an auto-generated SDK created using [Fern](https://docs.buildwithfern.com/overview/welcome/introduction). Documentation for usage can be found [here](https://docs.joinswsh.com)

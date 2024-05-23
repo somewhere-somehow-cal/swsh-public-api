@@ -1,0 +1,7 @@
+{
+  "name": "swsh-public-api",
+  "version": "0.0.1",
+  "description": "Generated SDK for the swsh public API",
+  "main": "index.js",
+  "types": "index.d.ts"
+}

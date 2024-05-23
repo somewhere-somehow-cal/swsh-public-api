@@ -3,5 +3,19 @@
   "version": "0.0.1",
   "description": "Generated SDK for the swsh public API",
   "main": "index.js",
-  "types": "index.d.ts"
+  "types": "index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/somewhere-somehow-cal/swsh-public-api"
+  },
+  "keywords": [
+    "somewhere-somehow",
+    "swsh"
+  ],
+  "author": "Nathan Ahn <nathan@joinswsh.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/somewhere-somehow-cal/swsh-public-api/issues"
+  },
+  "homepage": "https://github.com/somewhere-somehow-cal/swsh-public-api#readme"
 }

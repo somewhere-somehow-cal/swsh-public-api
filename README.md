@@ -1,4 +1,4 @@
-# Fern SDK Generated Repository
+# swsh Public API SDK
 
 This repository contains code that is automatically generated using [Fern](https://framer.buildwithfern.com/).
 

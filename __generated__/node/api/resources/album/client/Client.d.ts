@@ -36,5 +36,13 @@ export declare class Album {
      *     })
      */
     getAlbum(request: SwshApi.GetAlbumRequest, requestOptions?: Album.RequestOptions): Promise<SwshApi.ResponseSingleAlbum>;
+    /**
+     * @throws {@link SwshApi.BadRequestError}
+     *
+     * @example
+     *     await swshApi.album.getAlbums({
+     *         limit: 10
+     *     })
+     */
     getAlbums(request?: SwshApi.GetAlbumsRequest, requestOptions?: Album.RequestOptions): Promise<SwshApi.ResponseAlbumsCursor>;
 }

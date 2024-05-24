@@ -11,5 +11,7 @@ export declare namespace Album {
         name?: string | null;
         ownerId?: string | null;
         shareUrl?: string | null;
+        numPhotos?: number | null;
+        numParticipants?: number | null;
     }
 }

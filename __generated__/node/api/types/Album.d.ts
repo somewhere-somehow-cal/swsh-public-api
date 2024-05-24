@@ -5,6 +5,10 @@ export interface Album {
     albumId: string;
     name?: string;
     ownerId?: string;
-    /** A URL that can be shared with others to view the album */
+    /** A URL that can be shared with others to view the album. This URL is static and will always point to the album. You can safely cache this URL for future use. */
     shareUrl?: string;
+    /** The number of photos in the album */
+    numPhotos?: number;
+    /** The number of participants in the album (inclusive of the album owner) */
+    numParticipants?: number;
 }

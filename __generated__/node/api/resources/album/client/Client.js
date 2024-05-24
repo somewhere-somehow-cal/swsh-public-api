@@ -54,7 +54,12 @@ export class Album {
             if (_response.error.reason === "status-code") {
                 switch (_response.error.statusCode) {
                     case 400:
-                        throw new SwshApi.BadRequestError(_response.error.body);
+                        throw new SwshApi.BadRequestError(yield serializers.BadRequestErrorBody.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
                     default:
                         throw new errors.SwshApiError({
                             statusCode: _response.error.statusCode,
@@ -115,7 +120,12 @@ export class Album {
             if (_response.error.reason === "status-code") {
                 switch (_response.error.statusCode) {
                     case 400:
-                        throw new SwshApi.BadRequestError(_response.error.body);
+                        throw new SwshApi.BadRequestError(yield serializers.BadRequestErrorBody.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
                     case 404:
                         throw new SwshApi.NotFoundError(_response.error.body);
                     default:
@@ -140,6 +150,14 @@ export class Album {
             }
         });
     }
+    /**
+     * @throws {@link SwshApi.BadRequestError}
+     *
+     * @example
+     *     await swshApi.album.getAlbums({
+     *         limit: 10
+     *     })
+     */
     getAlbums(request = {}, requestOptions) {
         var _a;
         return __awaiter(this, void 0, void 0, function* () {
@@ -172,10 +190,20 @@ export class Album {
                 });
             }
             if (_response.error.reason === "status-code") {
-                throw new errors.SwshApiError({
-                    statusCode: _response.error.statusCode,
-                    body: _response.error.body,
-                });
+                switch (_response.error.statusCode) {
+                    case 400:
+                        throw new SwshApi.BadRequestError(yield serializers.BadRequestErrorBody.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
+                    default:
+                        throw new errors.SwshApiError({
+                            statusCode: _response.error.statusCode,
+                            body: _response.error.body,
+                        });
+                }
             }
             switch (_response.error.reason) {
                 case "non-json":

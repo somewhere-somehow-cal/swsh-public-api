@@ -7,4 +7,6 @@ export const Album = core.serialization.object({
     name: core.serialization.string().optional(),
     ownerId: core.serialization.string().optional(),
     shareUrl: core.serialization.string().optional(),
+    numPhotos: core.serialization.number().optional(),
+    numParticipants: core.serialization.number().optional(),
 });

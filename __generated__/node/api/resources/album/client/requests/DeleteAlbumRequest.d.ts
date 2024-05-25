@@ -7,9 +7,7 @@
  *         albumId: "22222222-2222-2222-2222-222222222222"
  *     }
  */
-export interface GetAlbumRequest {
-    /**
-     * ID of the album to retrieve
-     */
+export interface DeleteAlbumRequest {
+    /** The ID of the album to delete */
     albumId: string;
 }

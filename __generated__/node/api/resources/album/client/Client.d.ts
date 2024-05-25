@@ -25,14 +25,34 @@ export declare class Album {
      *         name: "My Album"
      *     })
      */
-    createAlbum(request: SwshApi.RequestBodyCreateAlbum, requestOptions?: Album.RequestOptions): Promise<SwshApi.ResponseSingleAlbum>;
+    createAlbum(request: SwshApi.CreateAlbumRequest, requestOptions?: Album.RequestOptions): Promise<SwshApi.ResponseSingleAlbum>;
+    /**
+     * @throws {@link SwshApi.BadRequestError}
+     * @throws {@link SwshApi.NotFoundError}
+     *
+     * @example
+     *     await swshApi.album.editAlbum({
+     *         albumId: "22222222-2222-2222-2222-222222222222"
+     *     })
+     */
+    editAlbum(request: SwshApi.EditAlbumRequest, requestOptions?: Album.RequestOptions): Promise<SwshApi.ResponseSingleAlbum>;
+    /**
+     * @throws {@link SwshApi.BadRequestError}
+     * @throws {@link SwshApi.NotFoundError}
+     *
+     * @example
+     *     await swshApi.album.deleteAlbum({
+     *         albumId: "22222222-2222-2222-2222-222222222222"
+     *     })
+     */
+    deleteAlbum(request: SwshApi.DeleteAlbumRequest, requestOptions?: Album.RequestOptions): Promise<SwshApi.ResponseSuccess>;
     /**
      * @throws {@link SwshApi.BadRequestError}
      * @throws {@link SwshApi.NotFoundError}
      *
      * @example
      *     await swshApi.album.getAlbum({
-     *         albumId: "11111111-1111-1111-1111-111111111111"
+     *         albumId: "22222222-2222-2222-2222-222222222222"
      *     })
      */
     getAlbum(request: SwshApi.GetAlbumRequest, requestOptions?: Album.RequestOptions): Promise<SwshApi.ResponseSingleAlbum>;

@@ -7,8 +7,8 @@ import * as core from "../../core";
 export declare const Album: core.serialization.ObjectSchema<serializers.Album.Raw, SwshApi.Album>;
 export declare namespace Album {
     interface Raw {
-        albumId: string;
-        name?: string | null;
+        albumId: serializers.AlbumId.Raw;
+        name?: serializers.AlbumName.Raw | null;
         ownerId?: string | null;
         shareUrl?: string | null;
         numPhotos?: number | null;

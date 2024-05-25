@@ -11,11 +11,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import * as core from "../../core";
-export const Album = core.serialization.object({
-    albumId: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("..")).AlbumId; })),
-    name: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("..")).AlbumName; })).optional(),
-    ownerId: core.serialization.string().optional(),
-    shareUrl: core.serialization.string().optional(),
-    numPhotos: core.serialization.number().optional(),
-    numParticipants: core.serialization.number().optional(),
+export const ResponseSuccess = core.serialization.object({
+    data: core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("..")).ResponseSuccessData; })),
+    warnings: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield import("..")).Warnings; })).optional(),
 });

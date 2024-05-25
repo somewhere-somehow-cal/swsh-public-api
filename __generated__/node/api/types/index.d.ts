@@ -1,4 +1,6 @@
 export * from "./BadRequestErrorBody";
+export * from "./AlbumId";
+export * from "./AlbumName";
 export * from "./Album";
 export * from "./Warnings";
 export * from "./Cursor";
@@ -6,3 +8,5 @@ export * from "./ResponseSingleAlbum";
 export * from "./ResponseAlbumsCursor";
 export * from "./ResponsePingData";
 export * from "./ResponsePing";
+export * from "./ResponseSuccessData";
+export * from "./ResponseSuccess";

@@ -4,9 +4,9 @@
 import * as serializers from "../../../..";
 import * as SwshApi from "../../../../../api";
 import * as core from "../../../../../core";
-export declare const RequestBodyCreateAlbum: core.serialization.Schema<serializers.RequestBodyCreateAlbum.Raw, SwshApi.RequestBodyCreateAlbum>;
-export declare namespace RequestBodyCreateAlbum {
+export declare const DeleteAlbumRequest: core.serialization.Schema<serializers.DeleteAlbumRequest.Raw, SwshApi.DeleteAlbumRequest>;
+export declare namespace DeleteAlbumRequest {
     interface Raw {
-        name: string;
+        albumId: string;
     }
 }

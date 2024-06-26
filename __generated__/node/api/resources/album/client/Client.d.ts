@@ -65,4 +65,14 @@ export declare class Album {
      *     })
      */
     getAlbums(request?: SwshApi.GetAlbumsRequest, requestOptions?: Album.RequestOptions): Promise<SwshApi.ResponseAlbumsCursor>;
+    /**
+     * @throws {@link SwshApi.BadRequestError}
+     * @throws {@link SwshApi.NotFoundError}
+     *
+     * @example
+     *     await swshApi.album.getPreviewPhotos({
+     *         albumId: "22222222-2222-2222-2222-222222222222"
+     *     })
+     */
+    getPreviewPhotos(request: SwshApi.GetPreviewPhotosRequest, requestOptions?: Album.RequestOptions): Promise<SwshApi.ResponsePreviewPhotos>;
 }

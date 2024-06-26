@@ -350,4 +350,72 @@ export class Album {
             }
         });
     }
+    /**
+     * @throws {@link SwshApi.BadRequestError}
+     * @throws {@link SwshApi.NotFoundError}
+     *
+     * @example
+     *     await swshApi.album.getPreviewPhotos({
+     *         albumId: "22222222-2222-2222-2222-222222222222"
+     *     })
+     */
+    getPreviewPhotos(request, requestOptions) {
+        var _a;
+        return __awaiter(this, void 0, void 0, function* () {
+            const { albumId } = request;
+            const _queryParams = {};
+            _queryParams["albumId"] = albumId;
+            const _response = yield core.fetcher({
+                url: urlJoin((_a = (yield core.Supplier.get(this._options.environment))) !== null && _a !== void 0 ? _a : environments.SwshApiEnvironment.Default, "album/getPreviewPhotos"),
+                method: "GET",
+                headers: {
+                    "x-api-key": yield core.Supplier.get(this._options.apiKey),
+                    "X-Fern-Language": "JavaScript",
+                },
+                contentType: "application/json",
+                queryParameters: _queryParams,
+                timeoutMs: (requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.timeoutInSeconds) != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
+                maxRetries: requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.maxRetries,
+            });
+            if (_response.ok) {
+                return yield serializers.ResponsePreviewPhotos.parseOrThrow(_response.body, {
+                    unrecognizedObjectKeys: "passthrough",
+                    allowUnrecognizedUnionMembers: true,
+                    allowUnrecognizedEnumValues: true,
+                    breadcrumbsPrefix: ["response"],
+                });
+            }
+            if (_response.error.reason === "status-code") {
+                switch (_response.error.statusCode) {
+                    case 400:
+                        throw new SwshApi.BadRequestError(yield serializers.BadRequestErrorBody.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
+                    case 404:
+                        throw new SwshApi.NotFoundError(_response.error.body);
+                    default:
+                        throw new errors.SwshApiError({
+                            statusCode: _response.error.statusCode,
+                            body: _response.error.body,
+                        });
+                }
+            }
+            switch (_response.error.reason) {
+                case "non-json":
+                    throw new errors.SwshApiError({
+                        statusCode: _response.error.statusCode,
+                        body: _response.error.rawBody,
+                    });
+                case "timeout":
+                    throw new errors.SwshApiTimeoutError();
+                case "unknown":
+                    throw new errors.SwshApiError({
+                        message: _response.error.errorMessage,
+                    });
+            }
+        });
+    }
 }

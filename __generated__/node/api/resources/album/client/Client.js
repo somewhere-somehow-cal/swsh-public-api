@@ -351,6 +351,7 @@ export class Album {
         });
     }
     /**
+     * Preview photos are a subset of the album's photos (max. 32 photos) that anyone can view when the preview feature is ON for that album
      * @throws {@link SwshApi.BadRequestError}
      * @throws {@link SwshApi.NotFoundError}
      *
